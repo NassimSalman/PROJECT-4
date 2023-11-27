@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corner-Store</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
 
 
     <style>
@@ -19,7 +25,7 @@
 
         body {
             height: 100%;
-            background-color: #f2f2f2;
+
             font-family: Arial, sans-serif;
         }
 
@@ -57,7 +63,7 @@
             width: 100%;
             height: 500px;
             position: relative;
-            background-color: rgb(216, 209, 209);
+            background-color: rgb(218, 217, 217);
             overflow: hidden;
         }
 
@@ -137,7 +143,6 @@
             flex-direction: row;
             justify-content: space-between;
             padding: 20px 100px;
-            background-color: #f2f2f2;
         }
 
         .icons2 {
@@ -156,7 +161,7 @@
         .card {
             text-align: center;
             margin: 10px;
-            background-color: rgb(216, 209, 209);
+            background-color: rgb(218, 217, 217);
             padding: 20px;
             max-width: 200px;
         }
@@ -189,7 +194,7 @@
             flex-direction: row;
             justify-content: space-between;
             padding: 20px 100px;
-            background-color: #f2f2f2;
+
         }
 
         .last-text p {
@@ -200,8 +205,22 @@
             margin: 0 8%;
             border: 1px solid #000;
         }
+
         .icons2 {
             cursor: pointer;
+        }
+
+        #button-color.clicked {
+            background-color: red;
+
+        }
+
+        .search-bar {
+            display: none;
+        }
+
+        .search-bar.active {
+            display: block;
         }
 
         @media screen and (max-width: 458px) {
@@ -259,84 +278,98 @@
             }
         }
     </style>
+
     </style>
 </head>
 
-<body>
-    <header>
-        <div class="header">
-            <div class="shop-about">
-                <a href="#"> Shop </a>
-                <a href="#"> About </a>
-            </div>
+<body class="bg-gray-200 "></body>
+<header class="bg-gray-200">
+    <div class="header">
+        <div class="shop-about">
+            <a href="#"> Shop </a>
+            <a href="#"> About </a>
+        </div>
 
-            <a href="#"> <img src="PROJECT-4\images\galaxy-store.png" /> </a>
+        <a href="#"> <img src="images\galaxy-store.png" /> </a>
 
 
-            <div class="icons">
-                <a href="#"> <img src="PROJECT-4\images\profileicon.png" /> </a>
-                <a href="#"> <img src="PROJECT-4\images\Shopping-cart.png" /> </a>
-
-            </div>
+        <div class="icons">
+            <a href="#"> <img src="images\profileicon.png" /> </a>
+            <a href="#"> <img src="images\Shopping-cart.png" /> </a>
 
         </div>
 
-        <div class="carousel">
-            <div class="left-btn btn">
-                <i class="fas fa-arrow-left"></i>
-            </div>
-            <img class="current-image" src="" alt="" />
-            <div class="text-overlay">
-                <h5> Lorem ipsum dolor sit amet consectetur adipisicing </h5>
-                <p> <a href="#"> view product </a></p>
-            </div>
-            <div class="right-btn btn">
-                <i class="fas fa-arrow-right"></i>
-            </div>
+    </div>
+
+    <div class="carousel">
+        <div class="left-btn btn">
+            <i class="fas fa-arrow-left"></i>
         </div>
+        <img class="current-image" src="" alt="" />
+        <div class="text-overlay">
+            <h5> Lorem ipsum dolor sit amet consectetur adipisicing </h5>
+            <p> <a href="#"> view product </a></p>
+        </div>
+        <div class="right-btn btn">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+    </div>
 
-    </header>
+</header>
 
 
-    <main>
-        <div class="store">
-            <h2> STORE </h2>
-
-            <div class="icons2">
+<main class="bg-gray-200 p-4">
+    <main class="bg-gray-200">
+        <div class="store flex justify-between p-4 bg-gray-300">
+            <h2 class="text-2xl">STORE</h2>
+            <div class="icons2 flex gap-2">
                 <i class="fas fa-arrow-down"></i>
-                <button type="submit"><i class="fa fa-search"></i></button>
-
+                <button type="button" id="search-toggle" class="bg-blue-500 text-white p-2"><i
+                        class="fa fa-search"></i></button>
             </div>
+        </div>
+
+        </div>
+        <div id="search-bar" class="search-bar p-4 bg-gray-300">
+            <input type="text" placeholder="Search..." class="p-2 border rounded">
+            <button type="button" class="bg-blue-500  text-white">Search</button>
+        </div>
+
+        </div>
         </div>
 
 
         <div class="card-images">
             <div class="card">
-                <img src="PROJECT-4\images\blanket1.png">
+                <img src="images\blanket1.png">
                 <p>
-                <pre> Product Name      <a>❤️</a></pre>
+                <pre> Product Name    <button id="button-color"><i 
+                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
                 </p>
                 <p> 10.00$ </p>
 
             </div>
             <div class="card">
-                <img src="PROJECT-4\images\blanket2.png">
+                <img src="images\blanket2.png">
                 <p>
-                <pre> Product Name      <a>❤️</a></pre>
+                <pre> Product Name    <button id="button-color" ><i
+                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
                 </p>
                 <p> 10.00$ </p>
             </div>
             <div class="card">
-                <img src="PROJECT-4\images\blanket3.png">
+                <img src="images\blanket3.png">
                 <p>
-                <pre> Product Name      <a>❤️</a></pre>
+                <pre> Product Name    <button id="button-color" ><i 
+                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
                 </p>
                 <p> 10.00$ </p>
             </div>
             <div class="card">
-                <img src="PROJECT-4\images\blanket4.png">
+                <img src="images\blanket4.png">
                 <p>
-                <pre> Product Name      <a>❤️</a></pre>
+                <pre> Product Name    <button id="button-color" ><i  
+                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
                 </p>
                 <p> 10.00$ </p>
             </div>
@@ -346,30 +379,34 @@
 
         <div class="card-images">
             <div class="card">
-                <img src="PROJECT-4\images\blanket5.png">
+                <img src="images\blanket5.png">
                 <p>
-                <pre> Product Name      <a>❤️</a></pre>
+                <pre> Product Name    <button id="button-color" ><i
+                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
                 </p>
                 <p> 10.00$ </p>
             </div>
             <div class="card">
-                <img src="PROJECT-4\images\blanket6.png">
+                <img src="images\blanket6.png">
                 <p>
-                <pre> Product Name      <a>❤️</a></pre>
+                <pre> Product Name    <button id="button-color" ><i 
+                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
                 </p>
                 <p> 10.00$ </p>
             </div>
             <div class="card">
-                <img src="PROJECT-4\images\blanket7.png">
+                <img src="images\blanket7.png">
                 <p>
-                <pre> Product Name      <a>❤️</a></pre>
+                <pre> Product Name    <button id="button-color" ><i
+                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
                 </p>
                 <p> 10.00$ </p>
             </div>
             <div class="card">
-                <img src="PROJECT-4\images\blanket8.png">
+                <img src="images\blanket8.png">
                 <p>
-                <pre> Product Name      <a>❤️</a></pre>
+                <pre> Product Name    <button id="button-color"><i  
+                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
                 </p>
                 <p> 10.00$ </p>
             </div>
@@ -381,7 +418,7 @@
             <br>
             <br>
             <br>
-            <h2> ABOUT </h2>
+            <h2> <b> ABOUT </b> </h2>
             <br>
             <br>
             <br>
@@ -391,7 +428,7 @@
                 aperiam doloribus ullam explicabo optio obcaecati accusantium officia, error placeat. Magnam officiis
                 mollitia officia aspernatur asperiores? =Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
                 est voluptatibus molestiae nesciunt eum beatae possimus repudiandae voluptate veniam deleniti debitis,
-                ad officiis magni officia culpa laborum quam ipsa pariatur?</label> </p>
+                ad officiis magni officia culpa laborum quam ipsa pariatur? </p>
             <br><br><br>
 
             <hr>
@@ -399,10 +436,10 @@
         <br> <br>
     </main>
 
-    <footer>
-        <div class="footer">
-            <div class="last-text">
-                <h3> About </h3>
+    <footer class="bg-gray-200 p-4">
+        <div class="footer" class="bg-gray-200 p-4">
+            <div class="last-text" class="bg-gray-200 p-4">
+                <h3> <b> About </b> </h3>
                 <br>
                 <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem totam vitae qui! Placeat molestias
                     obcaecati, adipisci et in amet qui possimus quam sunt quisquam aspernatur a modi dolorum neque error
@@ -411,8 +448,8 @@
 
             </div>
 
-            <div class="social">
-                <h4> Social </h4> <br>
+            <div class="social" class="bg-gray-200 p-4">
+                <h4> <b> Social </b> </h4> <br>
                 <pre>  <a href="#">Add social links</a> </pre>
             </div>
 
@@ -421,7 +458,7 @@
 
 
     <script>
-        let imageSources = ['PROJECT-4/images/pillow0.png', 'PROJECT-4/images/pillow2.png', 'PROJECT-4/images/pillow3.png', 'PROJECT-4/images/pillow4.png'];
+        let imageSources = ['images/pillow0.png', 'images/pillow2.png', 'images/pillow3.png', 'images/pillow4.png'];
 
         let imgIndex = 0;
 
@@ -453,8 +490,30 @@
         let rightBtn = document.querySelector('.right-btn');
         rightBtn.addEventListener('click', moveRight);
     </script>
+    <script>
+        const buttons = document.querySelectorAll('#button-color');
 
+        // Add click event listener to each button
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Toggle the 'clicked' class to change the button color
+                this.classList.toggle('clicked');
+            });
+        });
+    </script>
 
-</body>
+    <script>
+        // Add this script at the end of your body section
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchToggle = document.getElementById('search-toggle');
+            const searchBar = document.getElementById('search-bar');
+
+            searchToggle.addEventListener('click', function () {
+                searchBar.classList.toggle('active');
+            });
+        });
+    </script>
+    </body>
 
 </html>
