@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner-Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100%;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 60px;
+        }
+
+        .header img {
+            width: 40px;
+            height: auto;
+        }
+
+        .shop-about {
+            display: flex;
+            gap: 30px;
+            margin: 10px;
+            padding-left: 50px;
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: row;
+            padding-right: 50px;
+        }
+
+        .header a {
+            text-decoration: none;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            background-color: rgb(216, 209, 209);
+            overflow: hidden;
+        }
+
+        .left-btn,
+        .right-btn {
+            position: absolute;
+            top: 50%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 50%;
+            padding: 10px;
+            transform: translateY(-50%);
+        }
+
+        .left-btn {
+            position: absolute;
+            left: 20px;
+            /* Adjust this value to move the left button */
+            top: 50%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .right-btn {
+            position: absolute;
+            right: 20px;
+            /* Adjust this value to move the left button */
+            top: 50%;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn i {
+            font-size: 20px;
+        }
+
+        .current-image {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .current-image img {
+            max-width: 100%;
+            max-height: 100%;
+
+            align-self: center;
+            justify-self: center;
+        }
+
+
+        .text-overlay {
+            position: absolute;
+            top: 30%;
+            padding-left: 80px;
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .text-overlay p {
+            padding-left: 600px
+        }
+
+        .text-overlay h5 {
+            padding-left: 600px;
+        }
+
+        .store {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px 100px;
+            background-color: #f2f2f2;
+        }
+
+        .icons2 {
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 20px;
+        }
+
+        .card {
+            text-align: center;
+            margin: 10px;
+            background-color: rgb(216, 209, 209);
+            padding: 20px;
+            max-width: 200px;
+        }
+
+        .card img {
+            width: 150px;
+            height: 200px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .main {
+            background-color: #f2f2f2;
+        }
+
+        .main-p2 {
+            padding: 0 100px;
+        }
+
+        .main-p2 h2,
+        .main-p2 p {
+            padding-bottom: 20px;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px 100px;
+            background-color: #f2f2f2;
+        }
+
+        .last-text p {
+            width: 50%;
+        }
+
+        hr {
+            margin: 0 8%;
+            border: 1px solid #000;
+        }
+        .icons2 {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 458px) {
+
+            .header,
+            .shop-about,
+            .icons {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .carousel .left-btn,
+            .carousel .right-btn {
+                padding: 5px;
+            }
+
+            .carousel .btn i {
+                font-size: 16px;
+            }
+
+            .store {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 1025px) {
+            .carousel .text-overlay {
+                padding-left: 0;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .store {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width: 405px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .text-overlay h5 {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="shop-about">
+                <a href="#"> Shop </a>
+                <a href="#"> About </a>
+            </div>
+
+            <a href="#"> <img src="PROJECT-4\images\galaxy-store.png" /> </a>
+
+
+            <div class="icons">
+                <a href="#"> <img src="PROJECT-4\images\profileicon.png" /> </a>
+                <a href="#"> <img src="PROJECT-4\images\Shopping-cart.png" /> </a>
+
+            </div>
+
+        </div>
+
+        <div class="carousel">
+            <div class="left-btn btn">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <img class="current-image" src="" alt="" />
+            <div class="text-overlay">
+                <h5> Lorem ipsum dolor sit amet consectetur adipisicing </h5>
+                <p> <a href="#"> view product </a></p>
+            </div>
+            <div class="right-btn btn">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main>
+        <div class="store">
+            <h2> STORE </h2>
+
+            <div class="icons2">
+                <i class="fas fa-arrow-down"></i>
+                <button type="submit"><i class="fa fa-search"></i></button>
+
+            </div>
+        </div>
+
+
+        <div class="card-images">
+            <div class="card">
+                <img src="PROJECT-4\images\blanket1.png">
+                <p>
+                <pre> Product Name      <a>❤️</a></pre>
+                </p>
+                <p> 10.00$ </p>
+
+            </div>
+            <div class="card">
+                <img src="PROJECT-4\images\blanket2.png">
+                <p>
+                <pre> Product Name      <a>❤️</a></pre>
+                </p>
+                <p> 10.00$ </p>
+            </div>
+            <div class="card">
+                <img src="PROJECT-4\images\blanket3.png">
+                <p>
+                <pre> Product Name      <a>❤️</a></pre>
+                </p>
+                <p> 10.00$ </p>
+            </div>
+            <div class="card">
+                <img src="PROJECT-4\images\blanket4.png">
+                <p>
+                <pre> Product Name      <a>❤️</a></pre>
+                </p>
+                <p> 10.00$ </p>
+            </div>
+        </div>
+
+
+
+        <div class="card-images">
+            <div class="card">
+                <img src="PROJECT-4\images\blanket5.png">
+                <p>
+                <pre> Product Name      <a>❤️</a></pre>
+                </p>
+                <p> 10.00$ </p>
+            </div>
+            <div class="card">
+                <img src="PROJECT-4\images\blanket6.png">
+                <p>
+                <pre> Product Name      <a>❤️</a></pre>
+                </p>
+                <p> 10.00$ </p>
+            </div>
+            <div class="card">
+                <img src="PROJECT-4\images\blanket7.png">
+                <p>
+                <pre> Product Name      <a>❤️</a></pre>
+                </p>
+                <p> 10.00$ </p>
+            </div>
+            <div class="card">
+                <img src="PROJECT-4\images\blanket8.png">
+                <p>
+                <pre> Product Name      <a>❤️</a></pre>
+                </p>
+                <p> 10.00$ </p>
+            </div>
+        </div>
+
+        <div class="main-p2">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2> ABOUT </h2>
+            <br>
+            <br>
+            <br>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem totam vitae qui! Placeat molestias
+                obcaecati, adipisci et in amet qui possimus quam sunt quisquam aspernatur a modi dolorum neque error
+                =Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quam sint deleniti suscipit mollitia,
+                aperiam doloribus ullam explicabo optio obcaecati accusantium officia, error placeat. Magnam officiis
+                mollitia officia aspernatur asperiores? =Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+                est voluptatibus molestiae nesciunt eum beatae possimus repudiandae voluptate veniam deleniti debitis,
+                ad officiis magni officia culpa laborum quam ipsa pariatur?</label> </p>
+            <br><br><br>
+
+            <hr>
+        </div>
+        <br> <br>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="last-text">
+                <h3> About </h3>
+                <br>
+                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem totam vitae qui! Placeat molestias
+                    obcaecati, adipisci et in amet qui possimus quam sunt quisquam aspernatur a modi dolorum neque error
+                    =Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quam sint deleniti suscipit
+                    mollitia, </p>
+
+            </div>
+
+            <div class="social">
+                <h4> Social </h4> <br>
+                <pre>  <a href="#">Add social links</a> </pre>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        let imageSources = ['PROJECT-4/images/pillow0.png', 'PROJECT-4/images/pillow2.png', 'PROJECT-4/images/pillow3.png', 'PROJECT-4/images/pillow4.png'];
+
+        let imgIndex = 0;
+
+        updateUI();
+
+        function moveRight() {
+            imgIndex = imgIndex + 1;
+            if (imgIndex > imageSources.length - 1) {
+                imgIndex = 0;
+            }
+            updateUI();
+        }
+
+        function moveLeft() {
+            imgIndex = imgIndex - 1;
+            if (imgIndex < 0) {
+                imgIndex = imageSources.length - 1;
+            }
+            updateUI();
+        }
+
+        function updateUI() {
+            document.querySelector('.carousel img').src = imageSources[imgIndex];
+        }
+
+        let leftBtn = document.querySelector('.left-btn');
+        leftBtn.addEventListener('click', moveLeft);
+
+        let rightBtn = document.querySelector('.right-btn');
+        rightBtn.addEventListener('click', moveRight);
+    </script>
+
+
+</body>
+
+</html>
