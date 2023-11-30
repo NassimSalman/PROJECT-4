@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-
-
-
     <style>
         * {
             padding: 0;
@@ -83,8 +80,7 @@
         .left-btn {
             position: absolute;
             left: 20px;
-            /* Adjust this value to move the left button */
-            top: 50%;
+            top: 50%;    
             display: flex;
             align-items: center;
 
@@ -92,8 +88,7 @@
 
         .right-btn {
             position: absolute;
-            right: 20px;
-            /* Adjust this value to move the left button */
+            right: 20px;  
             top: 50%;
             display: flex;
             align-items: center;
@@ -144,7 +139,7 @@
             justify-content: space-between;
             padding: 20px 100px;
         }
-
+            
         .icons2 {
             display: flex;
             gap: 10px;
@@ -174,10 +169,6 @@
         .card a {
             text-decoration: none;
             color: #000;
-        }
-
-        .main {
-            background-color: #f2f2f2;
         }
 
         .main-p2 {
@@ -282,134 +273,62 @@
     </style>
 </head>
 
-<body class="bg-gray-200 "></body>
-<header class="bg-gray-200">
-    <div class="header">
-        <div class="shop-about">
-            <a href="#"> Shop </a>
-            <a href="#"> About </a>
+<body class="bg-gray-200 ">
+    <header class="bg-gray-200">
+        <div class="header">
+            <div class="shop-about">
+                <a href="#"> Shop </a>
+                <a href="#"> About </a>
+            </div>
+    
+            <a href="#"> <img src="images\galaxy-store.png" /> </a>
+    
+    
+            <div class="icons">
+                <a href="#"> <img src="images\profileicon.png" /> </a>
+                <a href="#"> <img src="images\Shopping-cart.png" /> </a>
+    
+            </div>
+    
         </div>
-
-        <a href="#"> <img src="images\galaxy-store.png" /> </a>
-
-
-        <div class="icons">
-            <a href="#"> <img src="images\profileicon.png" /> </a>
-            <a href="#"> <img src="images\Shopping-cart.png" /> </a>
-
+    
+        <div class="carousel">
+            <div class="left-btn btn">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <img class="current-image" src="" alt="" />
+            <div class="text-overlay">
+                <h5> Lorem ipsum dolor sit amet consectetur adipisicing </h5>
+                <p> <a href="#"> view product </a></p>
+            </div>
+            <div class="right-btn btn">
+                <i class="fas fa-arrow-right"></i>
+            </div>
         </div>
+    
+    </header>
 
-    </div>
-
-    <div class="carousel">
-        <div class="left-btn btn">
-            <i class="fas fa-arrow-left"></i>
-        </div>
-        <img class="current-image" src="" alt="" />
-        <div class="text-overlay">
-            <h5> Lorem ipsum dolor sit amet consectetur adipisicing </h5>
-            <p> <a href="#"> view product </a></p>
-        </div>
-        <div class="right-btn btn">
-            <i class="fas fa-arrow-right"></i>
-        </div>
-    </div>
-
-</header>
-
-
-<main class="bg-gray-200 p-4">
     <main class="bg-gray-200">
         <div class="store flex justify-between p-4 bg-gray-300">
             <h2 class="text-2xl">STORE</h2>
             <div class="icons2 flex gap-2">
-                <i class="fas fa-arrow-down"></i>
-                <button type="button" id="search-toggle" class="bg-blue-500 text-white p-2"><i
-                        class="fa fa-search"></i></button>
+                <button type="button" id="search-toggle" class="bg-blue-500 text-white p-2">
+                    <i class="fa fa-search"></i>
+                </button>
+                <input type="text" id="price-input" placeholder="Enter Price" class="p-2 border rounded">
+                <button type="button" id="search-price" class="bg-yellow-500 text-white p-2">Search Price</button>
+                <button type="button" id="filter-ascending" class="bg-green-500 text-white p-2">Ascending</button>
+                <button type="button" id="filter-descending" class="bg-red-500 text-white p-2">Descending</button>
             </div>
         </div>
 
-        </div>
         <div id="search-bar" class="search-bar p-4 bg-gray-300">
-            <input type="text" placeholder="Search..." class="p-2 border rounded">
-            <button type="button" class="bg-blue-500  text-white">Search</button>
+            <input type="text" id="search-input" placeholder="Search..." class="p-2 border rounded">
+            <button type="button" id="search-button" class="bg-blue-500 text-white">Search</button>
         </div>
 
-        </div>
-        </div>
-
-
-        <div class="card-images">
-            <div class="card">
-                <img src="images\blanket1.png">
-                <p>
-                <pre> Product Name    <button id="button-color"><i 
-                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
-                </p>
-                <p> 10.00$ </p>
-
-            </div>
-            <div class="card">
-                <img src="images\blanket2.png">
-                <p>
-                <pre> Product Name    <button id="button-color" ><i
-                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
-                </p>
-                <p> 10.00$ </p>
-            </div>
-            <div class="card">
-                <img src="images\blanket3.png">
-                <p>
-                <pre> Product Name    <button id="button-color" ><i 
-                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
-                </p>
-                <p> 10.00$ </p>
-            </div>
-            <div class="card">
-                <img src="images\blanket4.png">
-                <p>
-                <pre> Product Name    <button id="button-color" ><i  
-                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
-                </p>
-                <p> 10.00$ </p>
-            </div>
-        </div>
-
-
-
-        <div class="card-images">
-            <div class="card">
-                <img src="images\blanket5.png">
-                <p>
-                <pre> Product Name    <button id="button-color" ><i
-                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
-                </p>
-                <p> 10.00$ </p>
-            </div>
-            <div class="card">
-                <img src="images\blanket6.png">
-                <p>
-                <pre> Product Name    <button id="button-color" ><i 
-                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
-                </p>
-                <p> 10.00$ </p>
-            </div>
-            <div class="card">
-                <img src="images\blanket7.png">
-                <p>
-                <pre> Product Name    <button id="button-color" ><i
-                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
-                </p>
-                <p> 10.00$ </p>
-            </div>
-            <div class="card">
-                <img src="images\blanket8.png">
-                <p>
-                <pre> Product Name    <button id="button-color"><i  
-                    class="fa-solid fa-heart text-gray-500"></i></button></pre>
-                </p>
-                <p> 10.00$ </p>
-            </div>
+        <div class="card-images" id="cardImages">
+            <!-- Cards will be dynamically added here -->
         </div>
 
         <div class="main-p2">
@@ -456,13 +375,12 @@
         </div>
     </footer>
 
-
     <script>
         let imageSources = ['images/pillow0.png', 'images/pillow2.png', 'images/pillow3.png', 'images/pillow4.png'];
 
         let imgIndex = 0;
 
-        updateUI();
+        updateUI(); 
 
         function moveRight() {
             imgIndex = imgIndex + 1;
@@ -490,30 +408,144 @@
         let rightBtn = document.querySelector('.right-btn');
         rightBtn.addEventListener('click', moveRight);
     </script>
+
     <script>
         const buttons = document.querySelectorAll('#button-color');
 
-        // Add click event listener to each button
         buttons.forEach(button => {
             button.addEventListener('click', function () {
-                // Toggle the 'clicked' class to change the button color
+              
                 this.classList.toggle('clicked');
             });
         });
     </script>
 
     <script>
-        // Add this script at the end of your body section
+    document.addEventListener('DOMContentLoaded', function () {
+    const searchToggle = document.getElementById('search-toggle');
+    const searchBar = document.getElementById('search-bar');
+    const searchButton = document.getElementById('search-button');
+    const searchInput = document.getElementById('search-input');
+    const priceInput = document.getElementById('price-input');
+    const searchPriceButton = document.getElementById('search-price');
+    const filterAscending = document.getElementById('filter-ascending');
+    const filterDescending = document.getElementById('filter-descending');
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const searchToggle = document.getElementById('search-toggle');
-            const searchBar = document.getElementById('search-bar');
+    searchToggle.addEventListener('click', function () {
+        searchBar.classList.toggle('active');
+    });
 
-            searchToggle.addEventListener('click', function () {
-                searchBar.classList.toggle('active');
-            });
+    searchButton.addEventListener('click', function () {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        performSearch(searchTerm);
+    });
+
+    searchPriceButton.addEventListener('click', function () {
+        const priceTerm = parseFloat(priceInput.value.trim());
+        performPriceSearch(priceTerm);
+    });
+
+    filterAscending.addEventListener('click', function () {
+        sortItems('asc');
+    });
+
+    filterDescending.addEventListener('click', function () {
+        sortItems('desc');
+    });
+
+    function performSearch(term) {
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            const cardContent = card.textContent.trim().toLowerCase();
+
+            if (cardContent.includes(term)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
         });
+    }
+
+    function performPriceSearch(term) {
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            const cardPrice = parseFloat(card.querySelector('p:last-child').textContent.trim().replace('$', ''));
+
+            if (cardPrice <= term) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+
+    function sortItems(order) {
+        const cardImages = document.querySelector('.card-images');
+        const cards = Array.from(document.querySelectorAll('.card'));
+
+        cards.sort(function (a, b) {
+            const priceA = parseFloat(a.querySelector('p:last-child').textContent.trim().replace('$', ''));
+            const priceB = parseFloat(b.querySelector('p:last-child').textContent.trim().replace('$', ''));
+
+            if (order === 'asc') {
+                return priceA - priceB;
+            } else {
+                return priceB - priceA;
+            }
+        });
+
+        cardImages.innerHTML = ''; // Clear existing cards
+
+        cards.forEach(card => {
+            cardImages.appendChild(card);
+        });
+    }
+});
+
+
     </script>
-    </body>
+    
+
+    <script>
+        // Array of items
+        const itemsArray = [
+            { name: 'Blanket', image: 'images/blanket1.png', price: 10.00 },
+            { name: 'Camera', image: 'images/blanket2.png', price: 20.00 },
+            { name: 'Sanitizer', image: 'images/blanket3.png', price: 30.00 },
+            { name: 'Remote', image: 'images/blanket4.png', price: 80.00 },
+            { name: 'Television', image: 'images/blanket5.png', price: 70.00 },
+            { name: 'Pen', image: 'images/blanket6.png', price: 90.00 },
+            { name: 'Marker', image: 'images/blanket7.png', price: 60.00 },
+            { name: 'Mars', image: 'images/blanket8.png', price: 40.00 },
+        ];
+
+        // Function to create a card for each item
+        function createCard(item) {
+            const cardImages = document.getElementById('cardImages');
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            card.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <p>
+                    <pre>${item.name} <button class="button-color"><i class="fa fa-heart text-gray-500"></i></button></pre>
+                </p>
+                <p>${item.price.toFixed(2)}$</p>
+            `;
+
+            cardImages.appendChild(card);
+        }
+
+        // Loop through the items array and create cards
+        itemsArray.forEach(createCard);
+    </script>
+    
+    <script>
+        // Your existing JavaScript code for the carousel and other functionalities
+    </script>
+</body>
 
 </html>

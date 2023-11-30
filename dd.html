@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // define an array 
+            // this array contains numbers from 0 to 10
+            let numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            // wait 2 seconds
+            setTimeout(function () {
+                // numArray.sort() will not work for more than single digit  numbers
+                // or
+                let descSortedArray = numArray
+                    .sort((a, b) => {
+                        return b - a;
+                    })
+                console.log(descSortedArray)
+                let onlyodd = numArray.filter(function (number) {
+                    if (number % 2 == 0) {
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
+                })
+                console.log(onlyodd)
+                let onlyeven = numArray.filter(function (number) {
+                    if (number % 2 == 0) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                })
+                console.log(onlyeven)
+            }, 2000);
+        });
+        function emptyFN() {
+            // a valid function definition that does nothing
+        }
+
+    </script>
+
+</body>
+
+</html>

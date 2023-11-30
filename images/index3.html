@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <h1>Sorted Numbers</h1>
+    <div id="sortedNumbers"> </div>
+
+    <h1>Odd Numbers</h1>
+    <div id="oddNumbers"> </div>
+
+    <h1> Even Numbers </h1>
+    <div id="evenNumbers"> </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+    let numbers=[0,1,2,3,4,5,6,7,8,9,10];
+    let paragraph1 = document.querySelector("#sortedNumbers");
+    let paragraph2 = document.querySelector("#evenNumbers");
+    let paragraph3 = document.querySelector("#oddNumbers");
+    numbers.sort((a,b)=> b-a);
+    setTimeout(function(){
+      console.log(numbers);
+      paragraph1.innerHTML += numbers;
+      console.log(numbers.filter(function(number){return number%2 === 0;}));
+      paragraph2.innerHTML += (numbers.filter(function(number){return number%2 === 0;}));
+      console.log(numbers.filter(function(number){return number%2 !== 0;}));
+      paragraph3.innerHTML += (numbers.filter(function(number){return number%2 !== 0;}));
+    },2000);
+  })
+        
+    </script>
+
+</body>
+</html>
